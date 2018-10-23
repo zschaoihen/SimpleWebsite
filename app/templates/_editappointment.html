@@ -1,0 +1,38 @@
+
+        <tr>
+            <td width="70px">
+                <img src="{{ appointment.applicant.avatar(70) }}" />
+            </td>
+            <td>
+                {{ appointment.applicant.username }}
+                <br>
+                {{ appointment.address }}
+            </td>
+            <td>
+                {{ appointment.date }}
+                <br>
+                {{ appointment.time }}
+            </td>
+            <td>
+                {{ appointment.fordog.name }}
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" 
+                            data-toggle="dropdown">
+                        Edit<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url_for('reschedule', appointment=appointment.id) }}">Cancel or Reschedule</a></li>
+                        <li><a href="{{ url_for('delete', appointment=appointment.id) }}">Delete</a></li>
+                        
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <a href="{{ url_for('complete', appointment=appointment.id) }}" class="btn btn-primary" role="button">Complete</a>
+            </td>
+        </tr>
+
+
+

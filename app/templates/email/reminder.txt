@@ -1,0 +1,9 @@
+Dear {{ user.username }},
+
+Friendly remind you:
+
+You get a upcoming appointment tomorrow.
+
+Sincerely,
+
+Tom's Groomer Team

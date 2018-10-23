@@ -1,0 +1,33 @@
+
+        <tr>
+            <td width="70px">
+                <img src="{{ appointment.applicant.avatar(70) }}" />
+            </td>
+            <td>
+                {{ appointment.applicant.username }}
+                <br>
+                {{ appointment.address }}
+            </td>
+            <td>
+                {{ appointment.date }}
+                <br>
+                {{ appointment.time }}
+            </td>
+            <td>
+                {{ appointment.fordog.name }}
+                <br>
+                {{ appointment.type.name }}
+            </td>
+            <td>
+                {{ moment(appointment.create_time).format('lll') }}
+            </td>
+            <td>
+                {{ appointment.comment }}
+            </td>
+            <td>
+                <a href="{{ url_for('reschedule', appointment=appointment.id) }}" class="btn btn-primary" role="button">Edit</a>
+            </td>
+        </tr>
+
+
+

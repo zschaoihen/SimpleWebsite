@@ -1,0 +1,15 @@
+
+        <tr>
+            <td>
+                {{ service.name }}
+            </td>
+            <td>
+                {{ service.price }}
+            </td>
+            <td>
+                <a href="{{ url_for('edit_service', servicename=service.name) }}" class="btn btn-primary" role="button">Edit</a>
+            </td>
+            <td>
+                <a href="{{ url_for('expire_service', service_id=service.id) }}" class="btn btn-primary" role="button">Offline</a>
+            </td>
+        </tr>

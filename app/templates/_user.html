@@ -1,0 +1,38 @@
+
+        <tr>
+            <td width="70px">
+                <img src="{{ user.avatar(70) }}" />
+            </td>
+            <td>
+                {{ user.username }}
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+            <td>
+                {{ user.address }}
+            </td>
+            <td>
+                {% if user.is_administrator %}
+                Administrator
+                {% else %}
+                User
+                {% endif %}
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" 
+                            data-toggle="dropdown">
+                        Set Permission<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url_for('set_permission', user_id = user.id, administrator=True) }}">As administrator</a></li>
+                        <li><a href="{{ url_for('set_permission', user_id = user.id, administrator=False) }}">As nomarl user</a></li>
+                        
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <a href="{{ url_for('deleteuser', user_id=user.id) }}" class="btn btn-primary" role="button">Delete</a>
+            </td>
+        </tr>

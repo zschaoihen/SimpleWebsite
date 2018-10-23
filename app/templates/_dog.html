@@ -1,0 +1,26 @@
+
+        <tr>
+            <td>
+                {{ dog.name }}
+            </td>
+            <td>
+                {{ dog.dog_type }}
+            </td>
+            <td>
+                {{ dog.age }}
+            </td>
+            <td>
+                {{ dog.length }}
+            </td>
+            <td>
+                <!-- {% if dog.gender == "m" %}
+                Male
+                {% else %}
+                Female
+                {% endif %} -->
+                {{ dog.gender.name }}
+            </td>
+            <td>
+                <a href="{{ url_for('edit_dog', dogname=dog.name) }}" class="btn btn-primary" role="button">Edit</a>
+            </td>
+        </tr>
